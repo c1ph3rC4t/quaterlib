@@ -6,7 +6,7 @@
 
 //! Quaterlib
 //!
-//! A quaterion and rotation library for Rust.
+//! A quaternion and rotation library for Rust.
 
 #![cfg_attr(feature = "f128", feature(f128))]
 mod euler_angles;

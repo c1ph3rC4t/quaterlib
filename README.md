@@ -10,7 +10,7 @@
 
 ## Overview
 
-There are a lot of quaterion libraries out there, but i can guarantee that this one, oh boy, this one is the worst! All due to `f128` and `BigFraction`.  
+There are a lot of quaternion libraries out there, but i can guarantee that this one, oh boy, this one is the worst! All due to `f128` and `BigFraction`.  
 If you cant tell, implementing `Quaternion<f128>` and `Quaternion<BigFraction>` was real fun. <img src="crying_thumbs_up_cat.png" width="20" style="vertical-align: middle">
 
 ## Contributing

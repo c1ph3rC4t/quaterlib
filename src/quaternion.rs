@@ -33,12 +33,16 @@ impl<T: Float> Quaternion<T> {
     pub fn new_rot(axis: (T, T, T), alpha: T) -> Self {
         let half_alpha = alpha / T::two();
         let sin_half_alpha = half_alpha.clone().sin();
+        let len = (axis.0.clone() * axis.0.clone()
+            + axis.1.clone() * axis.1.clone()
+            + axis.2.clone() * axis.2.clone())
+        .sqrt();
 
         Self {
             w: half_alpha.cos(),
-            x: axis.0 * sin_half_alpha.clone(),
-            y: axis.1 * sin_half_alpha.clone(),
-            z: axis.2 * sin_half_alpha,
+            x: (axis.0 / len.clone()) * sin_half_alpha.clone(),
+            y: (axis.1 / len.clone()) * sin_half_alpha.clone(),
+            z: (axis.2 / len) * sin_half_alpha,
         }
     }
 
@@ -253,7 +257,6 @@ impl<T: Float> Div for Quaternion<T> {
     }
 }
 
-#[allow(clippy::suspicious_op_assign_impl)]
 impl<T: Float> DivAssign for Quaternion<T> {
     fn div_assign(&mut self, rhs: Self) {
         *self = self.clone() / rhs;

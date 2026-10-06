@@ -1,6 +1,6 @@
 [package]
 name = "quaterlib"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 authors = ["c1ph3rC4t"]
 categories = []
@@ -16,14 +16,13 @@ fraction = ["dep:fraction"]
 f128 = []
 
 [dependencies]
-fraction = { version = "0.15.4", features = [
-    "lazy_static",
+fraction = { version = "0.17.0", features = [
     "with-bigint",
     "with-decimal",
     "with-dynaint",
     "with-approx",
 ], optional = true }
-thiserror = "2.0.19"
+thiserror = "2.0.21"
 
 [dev-dependencies]
 cargo-husky = { version = "1.5.0", default-features = true, features = [
